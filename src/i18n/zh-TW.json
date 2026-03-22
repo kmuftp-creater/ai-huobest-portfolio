@@ -1,0 +1,145 @@
+{
+  "nav": {
+    "home": "首頁",
+    "about": "關於我",
+    "projects": "作品介紹",
+    "prompts": "提示詞分享",
+    "skills": "Skill 分享",
+    "workshop": "工作坊",
+    "admin": "管理後台",
+    "login": "登入",
+    "logout": "登出",
+    "feedback": "回報問題"
+  },
+  "theme": {
+    "light": "亮色",
+    "dark": "暗色"
+  },
+  "home": {
+    "hero_title": "霍 の AI 腦洞實驗室",
+    "hero_subtitle": "探索 AI 的無限可能，分享創意與技術的交匯點",
+    "latest_projects": "最新 AI 作品",
+    "latest_prompts": "最新提示詞",
+    "latest_skills": "最新 Skill",
+    "view_all": "查看全部",
+    "about_title": "關於我",
+    "about_desc": "一位熱愛 AI 技術的開發者，致力於探索人工智慧的各種應用可能性，並將創意轉化為實際專案。"
+  },
+  "projects": {
+    "title": "作品介紹",
+    "subtitle": "展示所有開發作品，包含 AI 專案與互動應用",
+    "tech": "技術標籤",
+    "demo": "線上展示",
+    "source": "原始碼",
+    "back": "返回 AI作品介紹",
+    "overview": "專案概況",
+    "features": "核心功能",
+    "tech_details": "技術實作細節",
+    "created_at": "建立時間",
+    "no_projects": "目前尚無專案，敬請期待！"
+  },
+  "sharing": {
+    "title": "AI 專案作品分享",
+    "subtitle": "個人開發的 AI 小工具與作品集",
+    "no_items": "目前尚無分享項目"
+  },
+  "prompts": {
+    "title": "提示詞分享",
+    "subtitle": "探索精選 AI 提示詞，提升您的工作效率",
+    "search_placeholder": "搜尋提示詞、標籤、類別...",
+    "filter_all": "全部",
+    "filter_beginner": "入門",
+    "filter_advanced": "進階",
+    "filter_expert": "專家",
+    "category_analysis": "分析",
+    "category_strategy": "策略",
+    "category_creation": "創作",
+    "category_optimization": "優化",
+    "view_detail": "查看詳情",
+    "copy": "複製提示詞",
+    "copy_one_click": "一鍵複製",
+    "copied": "已複製！",
+    "input_example": "輸入範例",
+    "output_example": "預期輸出範例",
+    "submit_prompt": "上傳提示詞",
+    "login_to_submit": "登入後即可上傳提示詞",
+    "login_google": "使用 Google 帳號登入",
+    "pending_review": "等待審核中",
+    "no_prompts": "目前尚無提示詞"
+  },
+  "skills": {
+    "title": "Skill 分享",
+    "subtitle": "實用 AI 技能與工具使用心得分享",
+    "description": "描述",
+    "source": "原始來源",
+    "how_to_use": "使用說明",
+    "content": "Skill 指令",
+    "copy": "複製 Skill",
+    "copied": "已複製！",
+    "no_skills": "目前尚無 Skill 分享",
+    "filter_all": "全部"
+  },
+  "workshop": {
+    "title": "AI 工作坊",
+    "subtitle": "參加工作坊，深入學習 AI 技術與應用",
+    "subtitle2": "學校團體、公司行號預開設團體課，請使用右上角回報建議或在交流討論區發問。",
+    "register": "立即報名",
+    "date": "日期",
+    "no_workshops": "目前尚無工作坊"
+  },
+  "about": {
+    "title": "關於我",
+    "subtitle": "認識霍 の AI 腦洞實驗室的創建者"
+  },
+  "privacy": {
+    "title": "隱私權政策",
+    "subtitle": "隱私權政策暨使用者條款"
+  },
+  "feedback": {
+    "title": "回報問題 / 提出建議",
+    "type": "類型",
+    "type_feature": "功能建議",
+    "type_bug": "錯誤回報",
+    "type_usage": "使用問題",
+    "type_course": "課程邀約",
+    "label_title": "標題",
+    "label_detail": "詳細說明",
+    "label_email": "Email（選填）",
+    "submit": "提交",
+    "success": "感謝您的回饋！",
+    "cancel": "取消"
+  },
+  "common": {
+    "loading": "載入中...",
+    "error": "發生錯誤",
+    "retry": "重試",
+    "save": "儲存",
+    "cancel": "取消",
+    "delete": "刪除",
+    "edit": "編輯",
+    "add": "新增",
+    "search": "搜尋",
+    "no_data": "目前無資料",
+    "confirm_delete": "確定要刪除嗎？此操作無法復原。",
+    "difficulty_beginner": "初級",
+    "difficulty_intermediate": "中級",
+    "difficulty_advanced": "進階",
+    "category_creative": "創意發想",
+    "category_data": "數據分析",
+    "category_text": "文本生成",
+    "category_coding": "程式設計",
+    "category_marketing": "行銷文案",
+    "category_teaching": "教學輔助"
+  },
+  "footer": {
+    "copyright": "©2026",
+    "brand": "霍家私塾",
+    "version": "v0.0.1",
+    "privacy": "隱私權政策"
+  },
+  "not_found": {
+    "title": "404 - 頁面不存在",
+    "description": "您所尋找的頁面不存在或已被移除。",
+    "go_home": "返回首頁"
+  }
+}

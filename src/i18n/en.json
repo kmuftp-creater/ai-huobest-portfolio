@@ -1,0 +1,145 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Portfolio",
+    "prompts": "Prompts",
+    "skills": "Skills",
+    "workshop": "Workshop",
+    "admin": "Admin",
+    "login": "Login",
+    "logout": "Logout",
+    "feedback": "Feedback"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "home": {
+    "hero_title": "Huo's AI BrainHole Lab",
+    "hero_subtitle": "Explore the infinite possibilities of AI, sharing the intersection of creativity and technology",
+    "latest_projects": "Latest Projects",
+    "latest_prompts": "Latest Prompts",
+    "latest_skills": "Latest Skills",
+    "view_all": "View All",
+    "about_title": "About Me",
+    "about_desc": "A developer passionate about AI technology, dedicated to exploring various possibilities of artificial intelligence and transforming creative ideas into real projects."
+  },
+  "projects": {
+    "title": "Portfolio",
+    "subtitle": "Showcasing all projects and interactive apps",
+    "tech": "Tech Stack",
+    "demo": "Live Demo",
+    "source": "Source Code",
+    "back": "Back to Projects",
+    "overview": "Overview",
+    "features": "Core Features",
+    "tech_details": "Technical Details",
+    "created_at": "Created",
+    "no_projects": "No projects yet. Stay tuned!"
+  },
+  "sharing": {
+    "title": "AI Project Sharing",
+    "subtitle": "Personal AI tools and project collection",
+    "no_items": "No shared items yet"
+  },
+  "prompts": {
+    "title": "Prompt Sharing",
+    "subtitle": "Explore curated AI prompts to boost your productivity",
+    "search_placeholder": "Search prompts, tags, categories...",
+    "filter_all": "All",
+    "filter_beginner": "Beginner",
+    "filter_advanced": "Advanced",
+    "filter_expert": "Expert",
+    "category_analysis": "Analysis",
+    "category_strategy": "Strategy",
+    "category_creation": "Creation",
+    "category_optimization": "Optimization",
+    "view_detail": "View Details",
+    "copy": "Copy Prompt",
+    "copy_one_click": "One-Click Copy",
+    "copied": "Copied!",
+    "input_example": "Input Example",
+    "output_example": "Expected Output Example",
+    "submit_prompt": "Submit Prompt",
+    "login_to_submit": "Log in to submit prompts",
+    "login_google": "Sign in with Google",
+    "pending_review": "Pending Review",
+    "no_prompts": "No prompts yet"
+  },
+  "skills": {
+    "title": "Skill Sharing",
+    "subtitle": "Practical AI skills and tool usage tips",
+    "description": "Description",
+    "source": "Original Source",
+    "how_to_use": "Instructions",
+    "content": "Skill Command",
+    "copy": "Copy Skill",
+    "copied": "Copied!",
+    "no_skills": "No skills shared yet",
+    "filter_all": "All"
+  },
+  "workshop": {
+    "title": "AI Workshop",
+    "subtitle": "Join workshops to learn AI techniques and applications",
+    "register": "Register Now",
+    "date": "Date",
+    "subtitle2": "Schools and companies wishing to arrange group courses, please use the feedback button or post in the forum.",
+    "no_workshops": "No workshops available"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Meet the creator of Huo's AI BrainHole Lab"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "subtitle": "Privacy Policy and Terms of Service"
+  },
+  "feedback": {
+    "title": "Report Issue / Suggest Feature",
+    "type": "Type",
+    "type_feature": "Feature Request",
+    "type_bug": "Bug Report",
+    "type_usage": "Usage Question",
+    "type_course": "Course Inquiry",
+    "label_title": "Title",
+    "label_detail": "Details",
+    "label_email": "Email (optional)",
+    "submit": "Submit",
+    "success": "Thank you for your feedback!",
+    "cancel": "Cancel"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Retry",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "add": "Add",
+    "search": "Search",
+    "no_data": "No data available",
+    "confirm_delete": "Are you sure? This action cannot be undone.",
+    "difficulty_beginner": "Beginner",
+    "difficulty_intermediate": "Intermediate",
+    "difficulty_advanced": "Advanced",
+    "category_creative": "Creative",
+    "category_data": "Data Analysis",
+    "category_text": "Text Generation",
+    "category_coding": "Coding",
+    "category_marketing": "Marketing",
+    "category_teaching": "Teaching"
+  },
+  "footer": {
+    "copyright": "©2026",
+    "brand": "Huo's Academy",
+    "version": "v0.0.1",
+    "privacy": "Privacy Policy"
+  },
+  "not_found": {
+    "title": "404 - Page Not Found",
+    "description": "The page you're looking for doesn't exist or has been removed.",
+    "go_home": "Go Home"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "nav": { "home": "ホーム", "about": "プロフィール", "projects": "作品紹介", "prompts": "プロンプト共有", "skills": "スキル共有", "workshop": "ワークショップ", "admin": "管理パネル", "login": "ログイン", "logout": "ログアウト", "feedback": "フィードバック" },
+  "theme": { "light": "ライト", "dark": "ダーク" },
+  "home": { "hero_title": "ホーのAIブレインホールラボ", "hero_subtitle": "AIの無限の可能性を探求し、創造性と技術の交差点を共有する", "latest_projects": "最新プロジェクト", "latest_prompts": "最新プロンプト", "latest_skills": "最新スキル", "view_all": "すべて表示", "about_title": "プロフィール", "about_desc": "AI技術に情熱を持つ開発者として、人工知能のさまざまな応用可能性を探求し、創造的なアイデアを実際のプロジェクトに変えることに尽力しています。" },
+  "projects": { "title": "AIプロジェクト紹介", "subtitle": "すべての開発プロジェクトの技術実装と革新的な応用を紹介", "tech": "技術タグ", "demo": "デモ", "source": "ソースコード", "back": "プロジェクト一覧に戻る", "overview": "概要", "features": "主な機能", "tech_details": "技術的な詳細", "created_at": "作成日", "no_projects": "現在プロジェクトはありません。お楽しみに！" },
+  "sharing": { "title": "AIプロジェクト共有", "subtitle": "個人開発のAIツールと作品集", "no_items": "まだ共有アイテムはありません" },
+  "prompts": { "title": "プロンプト共有", "subtitle": "厳選されたAIプロンプトを探索して、生産性を向上させましょう", "search_placeholder": "プロンプト、タグ、カテゴリを検索...", "filter_all": "すべて", "filter_beginner": "初級", "filter_advanced": "上級", "filter_expert": "エキスパート", "category_analysis": "分析", "category_strategy": "戦略", "category_creation": "創造", "category_optimization": "最適化", "view_detail": "詳細を見る", "copy": "プロンプトをコピー", "copy_one_click": "ワンクリックコピー", "copied": "コピーしました！", "input_example": "入力例", "output_example": "期待される出力例", "submit_prompt": "プロンプトを投稿", "login_to_submit": "ログインしてプロンプトを投稿", "login_google": "Googleアカウントでログイン", "pending_review": "審査待ち", "no_prompts": "まだプロンプトはありません" },
+  "skills": { "title": "スキル共有", "subtitle": "実用的なAIスキルとツールの使用ヒント", "description": "説明", "source": "元のソース", "how_to_use": "使い方", "content": "スキルコマンド", "copy": "スキルをコピー", "copied": "コピーしました！", "no_skills": "まだスキルの共有はありません", "filter_all": "すべて" },
+  "workshop": { "title": "AIワークショップ", "subtitle": "ワークショップに参加して、AI技術と応用を学びましょう", "subtitle2": "学校や企業のグループコースのご予約は、右上のフィードバックボタンまたは掲示板でお問い合わせください。", "register": "今すぐ登録", "date": "日付", "no_workshops": "現在ワークショップはありません" },
+  "about": { "title": "プロフィール", "subtitle": "ホーのAIブレインホールラボの創設者を紹介" },
+  "privacy": { "title": "プライバシーポリシー", "subtitle": "プライバシーポリシーおよび利用規約" },
+  "feedback": { "title": "問題報告 / 提案", "type": "タイプ", "type_feature": "機能リクエスト", "type_bug": "バグ報告", "type_usage": "使用方法の質問", "type_course": "コース問い合わせ", "label_title": "タイトル", "label_detail": "詳細", "label_email": "メール（任意）", "submit": "送信", "success": "フィードバックありがとうございます！", "cancel": "キャンセル" },
+  "common": { "loading": "読み込み中...", "error": "エラーが発生しました", "retry": "再試行", "save": "保存", "cancel": "キャンセル", "delete": "削除", "edit": "編集", "add": "追加", "search": "検索", "no_data": "データがありません", "confirm_delete": "本当に削除しますか？この操作は元に戻せません。", "difficulty_beginner": "初級", "difficulty_intermediate": "中級", "difficulty_advanced": "上級", "category_creative": "クリエイティブ", "category_data": "データ分析", "category_text": "テキスト生成", "category_coding": "プログラミング", "category_marketing": "マーケティング", "category_teaching": "教育" },
+  "footer": { "copyright": "©2026", "brand": "ホーのアカデミー", "version": "v0.0.1", "privacy": "プライバシーポリシー" },
+  "not_found": { "title": "404 - ページが見つかりません", "description": "お探しのページは存在しないか、削除されました。", "go_home": "ホームに戻る" }
+}

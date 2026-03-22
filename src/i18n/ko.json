@@ -1,0 +1,16 @@
+{
+  "nav": { "home": "홈", "about": "소개", "projects": "작품 소개", "prompts": "프롬프트 공유", "skills": "스킬 공유", "workshop": "워크숍", "admin": "관리자", "login": "로그인", "logout": "로그아웃", "feedback": "피드백" },
+  "theme": { "light": "라이트", "dark": "다크" },
+  "home": { "hero_title": "호의 AI 브레인홀 연구소", "hero_subtitle": "AI의 무한한 가능성을 탐구하고, 창의성과 기술의 교차점을 공유합니다", "latest_projects": "최신 프로젝트", "latest_prompts": "최신 프롬프트", "latest_skills": "최신 스킬", "view_all": "전체 보기", "about_title": "소개", "about_desc": "AI 기술에 열정을 가진 개발자로서, 인공지능의 다양한 응용 가능성을 탐구하고 창의적인 아이디어를 실제 프로젝트로 전환하는 데 전념하고 있습니다." },
+  "projects": { "title": "AI 프로젝트 소개", "subtitle": "모든 개발 프로젝트의 기술 구현과 혁신적인 응용을 소개", "tech": "기술 태그", "demo": "라이브 데모", "source": "소스 코드", "back": "프로젝트 목록으로", "overview": "개요", "features": "핵심 기능", "tech_details": "기술 세부사항", "created_at": "생성일", "no_projects": "현재 프로젝트가 없습니다. 기대해 주세요!" },
+  "sharing": { "title": "AI 프로젝트 공유", "subtitle": "개인 개발 AI 도구 및 작품 모음", "no_items": "아직 공유된 항목이 없습니다" },
+  "prompts": { "title": "프롬프트 공유", "subtitle": "엄선된 AI 프롬프트를 탐색하여 생산성을 높이세요", "search_placeholder": "프롬프트, 태그, 카테고리 검색...", "filter_all": "전체", "filter_beginner": "입문", "filter_advanced": "고급", "filter_expert": "전문가", "category_analysis": "분석", "category_strategy": "전략", "category_creation": "창조", "category_optimization": "최적화", "view_detail": "상세 보기", "copy": "프롬프트 복사", "copy_one_click": "원클릭 복사", "copied": "복사됨!", "input_example": "입력 예시", "output_example": "예상 출력 예시", "submit_prompt": "프롬프트 제출", "login_to_submit": "로그인하여 프롬프트를 제출하세요", "login_google": "Google 계정으로 로그인", "pending_review": "검토 대기 중", "no_prompts": "아직 프롬프트가 없습니다" },
+  "skills": { "title": "스킬 공유", "subtitle": "실용적인 AI 스킬과 도구 사용 팁", "description": "설명", "source": "원본 소스", "how_to_use": "사용 방법", "content": "스킬 명령어", "copy": "스킬 복사", "copied": "복사됨!", "no_skills": "아직 공유된 스킬이 없습니다", "filter_all": "전체" },
+  "workshop": { "title": "AI 워크숍", "subtitle": "워크숍에 참여하여 AI 기술과 응용을 배우세요", "subtitle2": "학교 및 기업 단체 강좌 문의는 우측 상단 피드백 버튼이나 커뮤니티 게시판을 이용해 주세요.", "register": "지금 등록", "date": "날짜", "no_workshops": "현재 워크숍이 없습니다" },
+  "about": { "title": "소개", "subtitle": "호의 AI 브레인홀 연구소 창립자 소개" },
+  "privacy": { "title": "개인정보 처리방침", "subtitle": "개인정보 처리방침 및 이용약관" },
+  "feedback": { "title": "문제 보고 / 제안", "type": "유형", "type_feature": "기능 요청", "type_bug": "버그 보고", "type_usage": "사용 질문", "type_course": "강좌 문의", "label_title": "제목", "label_detail": "상세 내용", "label_email": "이메일 (선택)", "submit": "제출", "success": "피드백 감사합니다!", "cancel": "취소" },
+  "common": { "loading": "로딩 중...", "error": "오류가 발생했습니다", "retry": "재시도", "save": "저장", "cancel": "취소", "delete": "삭제", "edit": "편집", "add": "추가", "search": "검색", "no_data": "데이터가 없습니다", "confirm_delete": "정말 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.", "difficulty_beginner": "초급", "difficulty_intermediate": "중급", "difficulty_advanced": "고급", "category_creative": "창작", "category_data": "데이터 분석", "category_text": "텍스트 생성", "category_coding": "프로그래밍", "category_marketing": "마케팅", "category_teaching": "교육" },
+  "footer": { "copyright": "©2026", "brand": "호의 아카데미", "version": "v0.0.1", "privacy": "개인정보 처리방침" },
+  "not_found": { "title": "404 - 페이지를 찾을 수 없습니다", "description": "찾으시는 페이지가 존재하지 않거나 삭제되었습니다.", "go_home": "홈으로" }
+}

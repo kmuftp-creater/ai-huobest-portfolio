@@ -1,0 +1,44 @@
+.wrapper { max-width: 960px; margin: 0 auto; padding: var(--space-8) 0; }
+.pageTitle { font-size: var(--text-heading); font-weight: var(--weight-bold); margin-bottom: var(--space-6); }
+
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); }
+@media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
+
+.card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-4); }
+
+.cardHeader { display: flex; align-items: center; gap: var(--space-2); font-size: var(--text-subheading); font-weight: var(--weight-semibold); padding-bottom: var(--space-3); border-bottom: 1px solid var(--color-border); }
+
+.levelBadge { display: flex; align-items: center; gap: var(--space-2); padding: var(--space-3) var(--space-4); border: 1.5px solid; border-radius: var(--radius-md); background: var(--color-bg); }
+.pointsDisplay { margin-left: auto; font-size: var(--text-caption); color: var(--color-text-secondary); }
+
+.progressWrap { display: flex; flex-direction: column; gap: 4px; }
+.progressBar { height: 6px; background: var(--color-border); border-radius: 999px; overflow: hidden; }
+.progressFill { height: 100%; border-radius: 999px; transition: width 0.3s ease; }
+.progressLabel { font-size: 12px; color: var(--color-text-tertiary); }
+
+.form { display: flex; flex-direction: column; gap: var(--space-4); }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field label { display: flex; align-items: center; gap: 5px; font-size: var(--text-caption); color: var(--color-text-secondary); font-weight: var(--weight-medium); }
+.field input, .field select, .field textarea { padding: 10px 12px; background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-md); color: var(--color-text); font-size: var(--text-body); transition: border-color var(--transition-base); }
+.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--color-primary); }
+.field textarea { resize: vertical; font-family: inherit; }
+.disabled { opacity: 0.5; cursor: not-allowed; }
+
+.fieldRow { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); }
+
+.saveMsg { font-size: var(--text-caption); color: var(--color-primary); }
+
+.divider { border: none; border-top: 1px solid var(--color-border); }
+
+.passwordSection { display: flex; align-items: center; gap: var(--space-2); font-size: var(--text-caption); color: var(--color-text-secondary); flex-wrap: wrap; }
+.resetBtn { margin-left: auto; padding: 6px 14px; border: 1px solid var(--color-border); border-radius: var(--radius-md); background: none; color: var(--color-text); font-size: var(--text-caption); cursor: pointer; transition: all var(--transition-base); }
+.resetBtn:hover { border-color: var(--color-primary); color: var(--color-primary); }
+.resetOk { margin-left: auto; font-size: 12px; color: var(--color-primary); }
+
+.logList { display: flex; flex-direction: column; gap: var(--space-4); max-height: 500px; overflow-y: auto; padding-right: 4px; }
+.logGroup { display: flex; flex-direction: column; gap: var(--space-2); }
+.logDate { font-size: 12px; color: var(--color-text-tertiary); padding-bottom: 4px; border-bottom: 1px solid var(--color-border); }
+.logRow { display: flex; align-items: center; justify-content: space-between; padding: 4px 0; font-size: var(--text-caption); }
+.logAction { color: var(--color-text-secondary); }
+.logPlus { color: #22c55e; font-weight: var(--weight-semibold); }
+.logMinus { color: #ef4444; font-weight: var(--weight-semibold); }

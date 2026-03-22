@@ -1,0 +1,275 @@
+.controls {
+  margin-bottom: var(--space-6);
+}
+
+.searchBar {
+  position: relative;
+  margin-bottom: var(--space-4);
+}
+
+.searchIcon {
+  position: absolute;
+  left: var(--space-3);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-tertiary);
+}
+
+.searchInput {
+  width: 100%;
+  height: 48px;
+  padding: 0 var(--space-10) 0 var(--space-10);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  font-size: var(--text-body);
+  color: var(--color-text);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-light);
+}
+
+.searchInput::placeholder {
+  color: var(--color-text-tertiary);
+}
+
+.clearBtn {
+  position: absolute;
+  right: var(--space-3);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-tertiary);
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: var(--space-1);
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.filterGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.filterChip {
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: var(--text-small);
+  font-weight: var(--weight-medium);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.filterChip:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.filterActive {
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+  border-color: var(--color-primary);
+}
+
+.filterActive:hover {
+  background: var(--color-primary-hover);
+  color: var(--color-text-inverse);
+}
+
+/* Login CTA */
+.loginCta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-lg);
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  font-size: var(--text-caption);
+  margin-bottom: var(--space-6);
+}
+
+/* Cards */
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition-base);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-2px);
+  border-color: var(--color-primary);
+}
+
+.cardMeta {
+  display: flex;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.cardTitle {
+  font-size: var(--text-body);
+  font-weight: var(--weight-semibold);
+  margin-bottom: var(--space-2);
+}
+
+.cardDesc {
+  font-size: var(--text-caption);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-3);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.cardTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  margin-bottom: var(--space-4);
+}
+
+.tag {
+  font-size: var(--text-small);
+  color: var(--color-text-tertiary);
+}
+
+/* Empty */
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-16);
+  color: var(--color-text-tertiary);
+}
+
+/* Modal */
+.closeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-md);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  background: none;
+  border: none;
+}
+
+.closeBtn:hover {
+  background: var(--color-surface-hover);
+}
+
+.modalMeta {
+  display: flex;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+}
+
+.modalSection {
+  margin-bottom: var(--space-5);
+}
+
+.modalLabel {
+  font-size: var(--text-caption);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-2);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.exampleBox {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  font-size: var(--text-caption);
+  line-height: var(--leading-relaxed);
+  word-break: break-word;
+}
+.exampleBox p { margin: 0 0 0.75em; line-height: 1.7; }
+.exampleBox p:last-child { margin-bottom: 0; }
+.exampleBox ul, .exampleBox ol { margin: 0 0 0.75em; padding-left: 1.5em; }
+.exampleBox li { margin-bottom: 0.25em; line-height: 1.6; }
+.exampleBox h1, .exampleBox h2, .exampleBox h3 { margin: 1em 0 0.5em; font-weight: 600; }
+.exampleBox h1 { font-size: 1.2em; }
+.exampleBox h2 { font-size: 1.1em; }
+.exampleBox h3 { font-size: 1em; }
+.exampleBox code { background: var(--color-bg); padding: 1px 4px; border-radius: 3px; font-family: monospace; font-size: 0.9em; }
+.exampleBox pre { background: var(--color-bg); padding: 12px; border-radius: 6px; overflow-x: auto; margin: 0 0 0.75em; }
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-top: var(--space-8);
+  padding: var(--space-4) 0;
+}
+.pageBtn {
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+  cursor: pointer;
+  font-size: var(--text-caption);
+  transition: all var(--transition-fast);
+}
+.pageBtn:hover:not(:disabled) { border-color: var(--color-primary); color: var(--color-primary); }
+.pageBtn:disabled { opacity: 0.4; cursor: default; }
+.pageInfo { font-size: var(--text-caption); color: var(--color-text-secondary); }
+
+.modalActions {
+  display: flex;
+  gap: var(--space-3);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+}
+
+.authorBadge {
+  font-size: var(--text-small);
+  color: var(--color-text-secondary);
+  background: var(--color-bg-secondary);
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-full);
+}
+
+.modalTagRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  margin-bottom: var(--space-4);
+}
+
+@media (max-width: 640px) {
+  .loginCta {
+    flex-direction: column;
+    text-align: center;
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "nav": {
+    "home": "首页",
+    "about": "关于我",
+    "projects": "作品介绍",
+    "prompts": "提示词分享",
+    "skills": "Skill 分享",
+    "workshop": "工作坊",
+    "admin": "管理后台",
+    "login": "登录",
+    "logout": "登出",
+    "feedback": "反馈问题"
+  },
+  "theme": { "light": "亮色", "dark": "暗色" },
+  "home": {
+    "hero_title": "霍の AI 脑洞实验室",
+    "hero_subtitle": "探索 AI 的无限可能，分享创意与技术的交汇点",
+    "latest_projects": "最新项目作品",
+    "latest_prompts": "最新提示词",
+    "latest_skills": "最新 Skill",
+    "view_all": "查看全部",
+    "about_title": "关于我",
+    "about_desc": "一位热爱 AI 技术的开发者，致力于探索人工智能的各种应用可能性，并将创意转化为实际项目。"
+  },
+  "projects": { "title": "AI 项目作品介绍", "subtitle": "展示所有开发项目的技术实现与创新应用", "tech": "技术标签", "demo": "在线展示", "source": "源代码", "back": "返回项目列表", "overview": "项目概况", "features": "核心功能", "tech_details": "技术实现细节", "created_at": "创建时间", "no_projects": "目前尚无项目，敬请期待！" },
+  "sharing": { "title": "AI 项目作品分享", "subtitle": "个人开发的 AI 小工具与作品集", "no_items": "目前尚无分享项目" },
+  "prompts": { "title": "提示词分享", "subtitle": "探索精选 AI 提示词，提升您的工作效率", "search_placeholder": "搜索提示词、标签、类别...", "filter_all": "全部", "filter_beginner": "入门", "filter_advanced": "进阶", "filter_expert": "专家", "category_analysis": "Analysis", "category_strategy": "Strategy", "category_creation": "Creation", "category_optimization": "Optimization", "view_detail": "查看详情", "copy": "复制提示词", "copy_one_click": "一键复制", "copied": "已复制！", "input_example": "输入范例", "output_example": "预期输出范例", "submit_prompt": "上传提示词", "login_to_submit": "登录后即可上传提示词", "login_google": "使用 Google 账号登录", "pending_review": "等待审核中", "no_prompts": "目前尚无提示词" },
+  "skills": { "title": "Skill 分享", "subtitle": "实用 AI 技能与工具使用心得分享", "description": "描述", "source": "原始来源", "how_to_use": "使用说明", "content": "Skill 指令", "copy": "复制 Skill", "copied": "已复制！", "no_skills": "目前尚无 Skill 分享", "filter_all": "全部" },
+  "workshop": { "title": "AI 工作坊", "subtitle": "参加工作坊，深入学习 AI 技术与应用", "subtitle2": "学校团体、公司机构如需预约团体课程，请使用右上角反馈按钮或在交流讨论区发问。", "register": "立即报名", "date": "日期", "no_workshops": "目前尚无工作坊" },
+  "about": { "title": "关于我", "subtitle": "认识霍の AI 脑洞实验室的创建者" },
+  "privacy": { "title": "隐私权政策", "subtitle": "隐私权政策暨用户条款" },
+  "feedback": { "title": "反馈问题 / 提出建议", "type": "类型", "type_feature": "功能建议", "type_bug": "错误反馈", "type_usage": "使用问题", "type_course": "课程邀约", "label_title": "标题", "label_detail": "详细说明", "label_email": "Email（选填）", "submit": "提交", "success": "感谢您的反馈！", "cancel": "取消" },
+  "common": { "loading": "加载中...", "error": "发生错误", "retry": "重试", "save": "保存", "cancel": "取消", "delete": "删除", "edit": "编辑", "add": "新增", "search": "搜索", "no_data": "目前无数据", "confirm_delete": "确定要删除吗？此操作无法恢复。", "difficulty_beginner": "初级", "difficulty_intermediate": "中级", "difficulty_advanced": "进阶", "category_creative": "创意发想", "category_data": "数据分析", "category_text": "文本生成", "category_coding": "程序设计", "category_marketing": "营销文案", "category_teaching": "教学辅助" },
+  "footer": { "copyright": "©2026", "brand": "霍家私塾", "version": "v0.0.1", "privacy": "隐私权政策" },
+  "not_found": { "title": "404 - 页面不存在", "description": "您所寻找的页面不存在或已被移除。", "go_home": "返回首页" }
+}
