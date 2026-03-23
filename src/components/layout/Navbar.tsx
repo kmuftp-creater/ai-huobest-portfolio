@@ -43,7 +43,7 @@ export default function Navbar({ onFeedbackClick }: NavbarProps) {
     { href: '/prompts', label: t('nav.prompts') },
     { href: '/skills', label: t('nav.skills') },
     { href: '/workshop', label: t('nav.workshop') },
-    { href: '/community', label: '交流討論' },
+    { href: '/sharing', label: '社群分享' },
   ];
 
   useEffect(() => {

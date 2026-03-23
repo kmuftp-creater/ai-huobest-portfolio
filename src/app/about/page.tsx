@@ -5,6 +5,7 @@ import { useI18n } from '@/contexts/I18nContext';
 import { getSupabaseClient } from '@/lib/supabase';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import remarkBreaks from 'remark-breaks';
 import styles from './about.module.css';
 
 export default function AboutPage() {
@@ -44,7 +45,7 @@ export default function AboutPage() {
           <div className={styles.content}>
             {content === null ? null : content ? (
               <div className="markdown-content">
-                <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+                <ReactMarkdown remarkPlugins={[remarkGfm, remarkBreaks]}>{content}</ReactMarkdown>
               </div>
             ) : (
               <>

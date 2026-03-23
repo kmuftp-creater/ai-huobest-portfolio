@@ -7,6 +7,7 @@ import AdminShell from '@/components/admin/AdminShell';
 import ImageUploader from '@/components/admin/ImageUploader';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import remarkBreaks from 'remark-breaks';
 import rehypeRaw from 'rehype-raw';
 import styles from '@/app/admin/admin.module.css';
 
@@ -45,6 +46,7 @@ interface FormState {
   html_code: string;
   link_url: string;
   published_at: string;
+  unlock_points: number | '';
 }
 
 const today = () => new Date().toISOString().slice(0, 10);
@@ -53,6 +55,7 @@ const emptyForm: FormState = {
   title: '', description: '', category: '', tagsRaw: '', demo_url: '', source_url: '',
   content: '', thumbnail_url: '', image_urls: [], status: 'published',
   embed_type: 'link', html_code: '', link_url: '', published_at: today(),
+  unlock_points: '',
 };
 
 export default function AdminProjectsPage() {
@@ -67,6 +70,7 @@ export default function AdminProjectsPage() {
   const [page, setPage] = useState(1);
 
   const [categories, setCategories] = useState<string[]>([]);
+
 
   const loadCategories = async () => {
     const { data } = await supabase.from('categories').select('name').eq('type', 'project').order('name');
@@ -112,6 +116,7 @@ export default function AdminProjectsPage() {
       html_code: item.html_code ?? '',
       link_url: item.link_url ?? item.demo_url ?? '',
       published_at: item.published_at ? item.published_at.slice(0, 10) : (item.created_at?.slice(0, 10) ?? today()),
+      unlock_points: (item as unknown as Record<string, unknown>).unlock_points ? Number((item as unknown as Record<string, unknown>).unlock_points) : '',
     });
     setShowModal(true);
   };
@@ -145,6 +150,7 @@ export default function AdminProjectsPage() {
       html_code: form.embed_type === 'html' ? form.html_code : null,
       link_url: form.embed_type === 'link' ? form.link_url : null,
       published_at: form.published_at || today(),
+      unlock_points: form.unlock_points === '' ? null : Number(form.unlock_points),
     };
 
     const tryUpsert = async (payload: typeof extPayload | typeof basePayload) => {
@@ -438,7 +444,7 @@ export default function AdminProjectsPage() {
                           <div className={styles.markdownPaneLabel}>預覽</div>
                           <div className={styles.markdownPreview}>
                             {form.content
-                              ? <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>{form.content}</ReactMarkdown>
+                              ? <ReactMarkdown remarkPlugins={[remarkGfm, remarkBreaks]} rehypePlugins={[rehypeRaw]}>{form.content}</ReactMarkdown>
                               : <span className={styles.markdownPreviewEmpty}>（開始輸入後這裡會顯示預覽）</span>
                             }
                           </div>
@@ -508,6 +514,37 @@ export default function AdminProjectsPage() {
                     <input value={form.source_url} onChange={e => setField('source_url', e.target.value)} placeholder="https://github.com/..." />
                   </div>
 
+                  {/* 積分解鎖設定 */}
+                  <div className={styles.formGroup}>
+                    <label style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                      🔒 積分解鎖設定
+                      <label style={{ display: 'flex', alignItems: 'center', gap: 6, fontWeight: 400, cursor: 'pointer' }}>
+                        <input
+                          type="checkbox"
+                          checked={form.unlock_points !== ''}
+                          onChange={e => setField('unlock_points', e.target.checked ? 50 : '')}
+                          style={{ width: 16, height: 16 }}
+                        />
+                        <span style={{ fontSize: 13 }}>開啟積分解鎖</span>
+                      </label>
+                    </label>
+                    {form.unlock_points !== '' && (
+                      <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginTop: 8 }}>
+                        <span style={{ fontSize: 13 }}>解鎖所需積分：</span>
+                        <input
+                          type="number"
+                          min={1}
+                          value={form.unlock_points}
+                          onChange={e => setField('unlock_points', parseInt(e.target.value) || 50)}
+                          style={{ width: 100 }}
+                        />
+                        <span style={{ fontSize: 12, color: 'var(--color-text-secondary)' }}>
+                          開啟後，Demo 展示、連結網址、Source URL 將隱藏，需積分兌換才可查看
+                        </span>
+                      </div>
+                    )}
+                  </div>
+
                   <div className={styles.formRow}>
                     <div className={styles.formGroup}>
                       <label>狀態</label>
@@ -527,6 +564,7 @@ export default function AdminProjectsPage() {
                   </div>
                 </div>
               </div>
+
               <div className={styles.modalFooter}>
                 <button type="button" className={`${styles.btn} ${styles.btnSecondary}`} onClick={() => setShowModal(false)}>取消</button>
                 <button type="submit" className={`${styles.btn} ${styles.btnPrimary}`} disabled={saving}>{saving ? '儲存中...' : '儲存'}</button>

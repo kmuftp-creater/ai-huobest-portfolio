@@ -1,12 +1,13 @@
 /* eslint-disable react-hooks/set-state-in-effect */
 'use client';
 
-import { useEffect, useState, useRef, useCallback, useMemo } from 'react';
+import { useEffect, useState, useRef, useCallback } from 'react';
 import { getSupabaseClient } from '@/lib/supabase';
 import AdminShell from '@/components/admin/AdminShell';
 import ImageUploader from '@/components/admin/ImageUploader';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import remarkBreaks from 'remark-breaks';
 import rehypeRaw from 'rehype-raw';
 import styles from '@/app/admin/admin.module.css';
 
@@ -42,12 +43,11 @@ interface FormState {
   status: string;
 }
 
-const today = () => new Date().toISOString().slice(0, 10);
 
 const emptyForm: FormState = {
   title: '', description: '', category: '', tagsRaw: '',
   content: '', thumbnail_url: '', image_urls: [], status: 'published',
-  embed_type: 'link', html_code: '', link_url: '', published_at: today(),
+  embed_type: 'link', html_code: '', link_url: '', published_at: '',
 };
 
 export default function AdminWorkshopsPage() {
@@ -61,13 +61,6 @@ export default function AdminWorkshopsPage() {
   const [deleteTarget, setDeleteTarget] = useState<Workshop | null>(null);
   const [page, setPage] = useState(1);
 
-  const [dbCategories, setDbCategories] = useState<string[]>([]);
-
-  const loadCategories = async () => {
-    const { data } = await supabase.from('categories').select('name').eq('type', 'workshop').order('name');
-    setDbCategories((data ?? []).map((c: { name: string }) => c.name));
-  };
-
   const loadData = async () => {
     const { data: { user } } = await supabase.auth.getUser();
     setEmail(user?.email ?? '');
@@ -75,12 +68,7 @@ export default function AdminWorkshopsPage() {
     setItems(data ?? []);
   };
 
-  useEffect(() => { loadData(); loadCategories(); }, []); // eslint-disable-line react-hooks/exhaustive-deps
-
-  const categories = useMemo(() => {
-    const fromItems = items.map(i => i.category).filter(Boolean);
-    return Array.from(new Set([...dbCategories, ...fromItems])).sort();
-  }, [dbCategories, items]);
+  useEffect(() => { loadData(); }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const openAdd = () => { setEditing(null); setForm(emptyForm); setShowModal(true); };
 
@@ -98,7 +86,7 @@ export default function AdminWorkshopsPage() {
       embed_type: (item.embed_type === 'html') ? 'html' : 'link',
       html_code: item.html_code ?? '',
       link_url: item.link_url ?? '',
-      published_at: item.published_at ? item.published_at.slice(0, 10) : (item.created_at?.slice(0, 10) ?? today()),
+      published_at: item.published_at ? item.published_at.slice(0, 10) : '',
     });
     setShowModal(true);
   };
@@ -127,7 +115,7 @@ export default function AdminWorkshopsPage() {
       embed_type: form.embed_type,
       html_code: form.embed_type === 'html' ? form.html_code : null,
       link_url: form.embed_type === 'link' ? form.link_url : null,
-      published_at: form.published_at || today(),
+      published_at: form.published_at || null,
     };
 
     const tryUpsert = async (payload: typeof extPayload | typeof basePayload) => {
@@ -311,18 +299,6 @@ export default function AdminWorkshopsPage() {
                     <textarea value={form.description} onChange={e => setField('description', e.target.value)} style={{ minHeight: 120 }} />
                   </div>
                   <div className={styles.formGroup}>
-                    <label>分類</label>
-                    <input
-                      list="workshop-categories"
-                      value={form.category}
-                      onChange={e => setField('category', e.target.value)}
-                      placeholder="輸入或選擇分類"
-                    />
-                    <datalist id="workshop-categories">
-                      {categories.map(c => <option key={c} value={c} />)}
-                    </datalist>
-                  </div>
-                  <div className={styles.formGroup}>
                     <label>工作坊說明（Markdown 編輯器，工具列可插入格式與圖片）</label>
                     {/* Hidden file input for image toolbar button */}
                     <input
@@ -411,7 +387,7 @@ export default function AdminWorkshopsPage() {
                           <div className={styles.markdownPaneLabel}>預覽</div>
                           <div className={styles.markdownPreview}>
                             {form.content
-                              ? <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>{form.content}</ReactMarkdown>
+                              ? <ReactMarkdown remarkPlugins={[remarkGfm, remarkBreaks]} rehypePlugins={[rehypeRaw]}>{form.content}</ReactMarkdown>
                               : <span className={styles.markdownPreviewEmpty}>（開始輸入後這裡會顯示預覽）</span>
                             }
                           </div>

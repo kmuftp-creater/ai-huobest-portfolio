@@ -7,9 +7,9 @@ import { useAuth } from '@/contexts/AuthContext';
 import { getSupabaseClient } from '@/lib/supabase';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import remarkBreaks from 'remark-breaks';
 import { Search, X, Copy, Check, Zap, LogIn, Plus } from 'lucide-react';
 import styles from './prompts.module.css';
-import CommentSection from '@/components/CommentSection';
 
 interface Prompt {
   id: string;
@@ -309,7 +309,7 @@ function PromptsContent() {
             {/* Content */}
             <div className={styles.modalSection}>
               <div className={styles.exampleBox}>
-                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                <ReactMarkdown remarkPlugins={[remarkGfm, remarkBreaks]}>
                   {selectedPrompt.content}
                 </ReactMarkdown>
               </div>
@@ -319,7 +319,7 @@ function PromptsContent() {
               <div className={styles.modalSection}>
                 <h3 className={styles.modalLabel}>{t('prompts.input_example')}</h3>
                 <div className={styles.exampleBox}>
-                  <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                  <ReactMarkdown remarkPlugins={[remarkGfm, remarkBreaks]}>
                     {selectedPrompt.input_example}
                   </ReactMarkdown>
                 </div>
@@ -330,7 +330,7 @@ function PromptsContent() {
               <div className={styles.modalSection}>
                 <h3 className={styles.modalLabel}>{t('prompts.output_example')}</h3>
                 <div className={styles.exampleBox}>
-                  <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                  <ReactMarkdown remarkPlugins={[remarkGfm, remarkBreaks]}>
                     {selectedPrompt.output_example}
                   </ReactMarkdown>
                 </div>
@@ -345,7 +345,6 @@ function PromptsContent() {
               </button>
             </div>
 
-            <CommentSection contentType="prompt" contentId={selectedPrompt.id} />
           </div>
         </div>
       )}

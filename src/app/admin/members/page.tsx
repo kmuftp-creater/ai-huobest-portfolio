@@ -47,6 +47,11 @@ export default function AdminMembersPage() {
   const [selectedMember, setSelectedMember] = useState<Profile | null>(null);
   const [resetSending, setResetSending] = useState(false);
   const [resetMsg, setResetMsg] = useState('');
+  // 積分調整
+  const [pointsInput, setPointsInput] = useState('');
+  const [pointsReason, setPointsReason] = useState('');
+  const [pointsSaving, setPointsSaving] = useState(false);
+  const [pointsMsg, setPointsMsg] = useState('');
 
   useEffect(() => {
     (async () => {
@@ -71,6 +76,26 @@ export default function AdminMembersPage() {
     }
     setSaving(null);
     setEditingLevel(null);
+  };
+
+  const handleAdjustPoints = async () => {
+    if (!selectedMember) return;
+    const delta = parseInt(pointsInput, 10);
+    if (isNaN(delta) || delta === 0) { setPointsMsg('請輸入有效的積分數值（可為負數）'); return; }
+    const reason = pointsReason.trim() || (delta > 0 ? '管理員加分' : '管理員扣分');
+    setPointsSaving(true);
+    setPointsMsg('');
+    const newPoints = Math.max(0, (selectedMember.points ?? 0) + delta);
+    const { error } = await supabase.from('profiles').update({ points: newPoints }).eq('id', selectedMember.id);
+    if (error) { setPointsMsg('更新失敗：' + error.message); setPointsSaving(false); return; }
+    await supabase.from('points_log').insert({ user_id: selectedMember.id, action: reason, points: delta });
+    setMembers(prev => prev.map(m => m.id === selectedMember.id ? { ...m, points: newPoints } : m));
+    setSelectedMember(prev => prev ? { ...prev, points: newPoints } : prev);
+    setPointsInput('');
+    setPointsReason('');
+    setPointsMsg(`✓ 已調整為 ${newPoints.toLocaleString()} 積分（${delta > 0 ? '+' : ''}${delta}）`);
+    setPointsSaving(false);
+    setTimeout(() => setPointsMsg(''), 5000);
   };
 
   const handleResetPassword = async (email: string) => {
@@ -201,6 +226,36 @@ export default function AdminMembersPage() {
                     </button>
                   ))}
                 </div>
+              </div>
+
+              {/* 積分調整 */}
+              <div style={{ borderTop: '1px solid var(--color-border)', paddingTop: 12, marginTop: 4 }}>
+                <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--color-text-secondary)', marginBottom: 8 }}>調整積分</div>
+                <div style={{ display: 'flex', gap: 6, marginBottom: 6 }}>
+                  <input
+                    type="number"
+                    placeholder="數值（負數為扣分）"
+                    value={pointsInput}
+                    onChange={e => setPointsInput(e.target.value)}
+                    style={{ flex: 1, padding: '5px 8px', borderRadius: 6, border: '1px solid var(--color-border)', background: 'var(--color-surface)', color: 'inherit', fontSize: 13 }}
+                  />
+                  <button
+                    onClick={handleAdjustPoints}
+                    disabled={pointsSaving}
+                    className={styles.editBtn}
+                    style={{ flexShrink: 0 }}
+                  >
+                    {pointsSaving ? '…' : '確認'}
+                  </button>
+                </div>
+                <input
+                  type="text"
+                  placeholder="原因（選填，預設：管理員加/扣分）"
+                  value={pointsReason}
+                  onChange={e => setPointsReason(e.target.value)}
+                  style={{ width: '100%', padding: '5px 8px', borderRadius: 6, border: '1px solid var(--color-border)', background: 'var(--color-surface)', color: 'inherit', fontSize: 12, boxSizing: 'border-box' }}
+                />
+                {pointsMsg && <p style={{ fontSize: 12, marginTop: 6, color: pointsMsg.includes('失敗') || pointsMsg.includes('請') ? '#ef4444' : '#10b981' }}>{pointsMsg}</p>}
               </div>
 
               <div style={{ borderTop: '1px solid var(--color-border)', paddingTop: 12, marginTop: 4 }}>

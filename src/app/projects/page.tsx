@@ -185,7 +185,7 @@ export default function ProjectsPage() {
                         <h3 className={styles.title}>{p.title}</h3>
                         <p className={styles.desc}>{p.description}</p>
                         <div className={styles.tags}>
-                          {getDisplayTags(p).slice(0, 3).map(tag => (
+                          {getDisplayTags(p).map(tag => (
                             <span key={tag} className="badge badge-primary">{tag}</span>
                           ))}
                         </div>

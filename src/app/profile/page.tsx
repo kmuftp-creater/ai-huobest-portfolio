@@ -100,6 +100,12 @@ export default function ProfilePage() {
         .order('created_at', { ascending: false })
         .limit(100);
       setLogs(logData ?? []);
+
+      // 生日積分（每年一次，頁面載入時自動檢查）
+      const { data: bdReward } = await supabase.rpc('award_birthday_points');
+      if (bdReward?.success && bdReward?.points) {
+        alert(`🎂 生日快樂！獲得 +${bdReward.points} 積分！`);
+      }
     })();
   }, [user, supabase]);
 
@@ -118,6 +124,19 @@ export default function ProfilePage() {
     setSaving(false);
     if (error) { setSaveMsg('儲存失敗：' + error.message); return; }
     setProfile(prev => prev ? { ...prev, ...form } : prev);
+
+    // 個人資料填寫完整獎勵 +200（一次性）
+    const isComplete = !!(form.username.trim() && form.phone.trim() && form.gender && form.birthday);
+    if (isComplete) {
+      const { data: reward } = await supabase.rpc('award_profile_complete');
+      if (reward?.success && reward?.points) {
+        setSaveMsg(`已儲存成功 ✓ 🎉 資料完整獎勵 +${reward.points} 積分！`);
+        setProfile(prev => prev ? { ...prev, points: (prev.points ?? 0) + reward.points } : prev);
+        setTimeout(() => setSaveMsg(''), 5000);
+        return;
+      }
+    }
+
     setSaveMsg('已儲存成功 ✓');
     setTimeout(() => setSaveMsg(''), 3000);
   };

@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { getSupabaseClient } from '@/lib/supabase';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import remarkBreaks from 'remark-breaks';
 import rehypeRaw from 'rehype-raw';
 import { Calendar, ArrowLeft, ExternalLink } from 'lucide-react';
 import styles from './workshop-detail.module.css';
@@ -53,7 +54,7 @@ export default function WorkshopDetailPage() {
 
   if (!workshop) return null;
 
-  const displayDate = (ws: Workshop) => (ws.published_at ?? ws.created_at ?? '').slice(0, 10);
+  const displayDate = (ws: Workshop) => ws.published_at ? ws.published_at.slice(0, 10) : null;
 
   return (
     <div className="page-enter">
@@ -70,10 +71,12 @@ export default function WorkshopDetailPage() {
           )}
 
           <div className={styles.header}>
-            <div className={styles.meta}>
-              <Calendar size={14} />
-              <span>{displayDate(workshop)}</span>
-            </div>
+            {displayDate(workshop) && (
+              <div className={styles.meta}>
+                <Calendar size={14} />
+                <span>{displayDate(workshop)}</span>
+              </div>
+            )}
             <h1 className={styles.title}>{workshop.title}</h1>
             {workshop.description && (
               <p className={styles.description}>{workshop.description}</p>
@@ -89,7 +92,7 @@ export default function WorkshopDetailPage() {
 
           {workshop.content && (
             <div className={styles.content}>
-              <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
+              <ReactMarkdown remarkPlugins={[remarkGfm, remarkBreaks]} rehypePlugins={[rehypeRaw]}>
                 {workshop.content}
               </ReactMarkdown>
             </div>

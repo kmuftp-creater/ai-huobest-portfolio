@@ -34,7 +34,7 @@ export default function WorkshopPage() {
   }, []);
 
   const displayDate = (ws: Workshop) =>
-    (ws.published_at ?? ws.created_at ?? '').slice(0, 10);
+    ws.published_at ? ws.published_at.slice(0, 10) : null;
 
   return (
     <div className="page-enter">
@@ -63,10 +63,12 @@ export default function WorkshopPage() {
                     )}
                   </div>
                   <div className={styles.cardContent}>
-                    <div className={styles.cardDate}>
-                      <Calendar size={14} />
-                      <span>{displayDate(ws)}</span>
-                    </div>
+                    {displayDate(ws) && (
+                      <div className={styles.cardDate}>
+                        <Calendar size={14} />
+                        <span>{displayDate(ws)}</span>
+                      </div>
+                    )}
                     <h3 className={styles.cardTitle}>{ws.title}</h3>
                     {ws.description && <p className={styles.cardDesc}>{ws.description}</p>}
                     {ws.tags?.length > 0 && (

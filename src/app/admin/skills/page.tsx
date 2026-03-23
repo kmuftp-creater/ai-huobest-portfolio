@@ -6,6 +6,7 @@ import { getSupabaseClient } from '@/lib/supabase';
 import AdminShell from '@/components/admin/AdminShell';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import remarkBreaks from 'remark-breaks';
 import styles from '@/app/admin/admin.module.css';
 
 interface Skill {
@@ -245,7 +246,7 @@ export default function AdminSkillsPage() {
                     </div>
                     {howToUsePreview ? (
                       <div style={{ minHeight: 200, padding: '12px 16px', border: '1px solid var(--color-border)', borderRadius: 8, background: 'var(--color-bg-secondary)', fontSize: 14, lineHeight: 1.6 }}>
-                        <ReactMarkdown remarkPlugins={[remarkGfm]}>{form.how_to_use || '*（無內容）*'}</ReactMarkdown>
+                        <ReactMarkdown remarkPlugins={[remarkGfm, remarkBreaks]}>{form.how_to_use || '*（無內容）*'}</ReactMarkdown>
                       </div>
                     ) : (
                       <textarea value={form.how_to_use} onChange={e => setField('how_to_use', e.target.value)} style={{ minHeight: 200, fontFamily: 'monospace' }} placeholder="支援 Markdown 語法，例如：&#10;## 使用步驟&#10;1. 步驟一&#10;2. 步驟二" />

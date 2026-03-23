@@ -5,6 +5,7 @@ import { useI18n } from '@/contexts/I18nContext';
 import { getSupabaseClient } from '@/lib/supabase';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import remarkBreaks from 'remark-breaks';
 
 export default function PrivacyPage() {
   const { t } = useI18n();
@@ -29,7 +30,7 @@ export default function PrivacyPage() {
 
           <div className="markdown-content" style={{ maxWidth: 800 }}>
             {content === null ? null : content ? (
-              <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              <ReactMarkdown remarkPlugins={[remarkGfm, remarkBreaks]}>
                 {content}
               </ReactMarkdown>
             ) : (

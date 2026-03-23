@@ -6,9 +6,9 @@ import { useI18n } from '@/contexts/I18nContext';
 import { getSupabaseClient } from '@/lib/supabase';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import remarkBreaks from 'remark-breaks';
 import { BookOpen, Copy, Check, X, ExternalLink, Search } from 'lucide-react';
 import styles from './skills.module.css';
-import CommentSection from '@/components/CommentSection';
 
 interface Skill {
   id: string;
@@ -217,7 +217,7 @@ function SkillsContent() {
             <div className={styles.modalSection}>
               <h3 className={styles.modalLabel}>{t('skills.content')}</h3>
               <div className={styles.contentBox}>
-                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                <ReactMarkdown remarkPlugins={[remarkGfm, remarkBreaks]}>
                   {selectedSkill.content}
                 </ReactMarkdown>
               </div>
@@ -228,7 +228,7 @@ function SkillsContent() {
               <div className={styles.modalSection}>
                 <h3 className={styles.modalLabel}>{t('skills.how_to_use')}</h3>
                 <div className={styles.contentBox}>
-                  <ReactMarkdown remarkPlugins={[remarkGfm]}>{selectedSkill.how_to_use}</ReactMarkdown>
+                  <ReactMarkdown remarkPlugins={[remarkGfm, remarkBreaks]}>{selectedSkill.how_to_use}</ReactMarkdown>
                 </div>
               </div>
             )}
@@ -256,7 +256,6 @@ function SkillsContent() {
               </button>
             </div>
 
-            <CommentSection contentType="skill" contentId={selectedSkill.id} />
           </div>
         </div>
       )}

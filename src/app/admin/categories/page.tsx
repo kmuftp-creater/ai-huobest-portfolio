@@ -35,7 +35,6 @@ const TYPE_LABELS: Record<string, string> = {
   skill: 'Skill 分享',
   prompt: '提示詞分享',
   project: '作品介紹',
-  forum: '交流討論區',
 };
 
 const TYPES = Object.keys(TYPE_LABELS);
